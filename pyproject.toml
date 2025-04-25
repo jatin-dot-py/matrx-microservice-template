@@ -12,4 +12,8 @@ dependencies = [
     "supabase>=2.15.0",
     "pydantic-settings>=2.9.1",
     "concurrent-log-handler>=0.9.25",
+    "matrx-utils",
 ]
+
+[tool.uv.sources]
+matrx-utils = { git = "https://github.com/armanisadeghi/matrx-utils", rev = "matrx_utils" }
