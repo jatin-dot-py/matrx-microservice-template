@@ -1,16 +1,16 @@
 import logging
+import time
+from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
-from core import settings
-from app.api.v1 import create_v1_app
-# from app.api.v2 import create_v2_app
-import time
-from contextlib import  asynccontextmanager
 from matrx_utils import vcprint
-from core.task_queue import get_task_queue
+from matrx_utils.core.task_queue import get_task_queue
+
+from app.api.v1 import create_v1_app
 from core import settings
 
 logger = logging.getLogger('app')
+
 
 def create_app() -> FastAPI:
     """Create and configure the FastAPI application with multiple API versions"""
@@ -31,7 +31,6 @@ def create_app() -> FastAPI:
         # Initialize AI MODEL Manager
         # Initialize more stuff
 
-
         yield
         # --- shutdown block ---
         logger.info("Shutting down gracefully…")
@@ -44,7 +43,7 @@ def create_app() -> FastAPI:
         version=settings.APP_VERSION,
         description="FastAPI Microservice with Multiple API Versions",
         docs_url=None,  # Disable default /docs
-        redoc_url=None , # Disable default /redoc,
+        redoc_url=None,  # Disable default /redoc,
         lifespan=lifespan
     )
 
@@ -56,6 +55,7 @@ def create_app() -> FastAPI:
 
     # Mount the API versions at their respective paths
     main_app.mount("/api/v1", v1_app)
+
     # main_app.mount("/api/v2", v2_app)
 
     @main_app.get("/", include_in_schema=False)

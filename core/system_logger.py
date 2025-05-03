@@ -8,9 +8,9 @@ from matrx_utils.conf import settings
 def get_log_directory():
     """Return the appropriate log directory based on environment"""
     if settings.ENVIRONMENT == "remote":
-        return '/var/log/'
+        return settings.REMOTE_LOG_DIRECTORY
     else:
-        path = os.path.join(settings.TEMP_DIR, 'logs')
+        path = settings.LOCAL_LOG_DIRECTORY
         os.makedirs(path, exist_ok=True)
         return path
 
@@ -20,7 +20,7 @@ if log_file_dir is None:
     raise ValueError("LOCAL_LOG_DIR must be set in settings.py")
 
 os.makedirs(log_file_dir, exist_ok=True)
-LOG_FILENAME = f"matrx_app_{settings.APP_NAME}.log"
+LOG_FILENAME = settings.LOG_FILENAME
 
 LOGGING = {
     "version": 1,

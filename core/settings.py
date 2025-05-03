@@ -1,6 +1,7 @@
-from pydantic_settings import BaseSettings ,SettingsConfigDict
 from pathlib import Path
 import os
+
+from pydantic_settings import BaseSettings, SettingsConfigDict
 from dotenv import load_dotenv
 from matrx_utils.conf import configure_settings
 
@@ -23,12 +24,17 @@ class Settings(BaseSettings):
 
     # Logging
     LOG_LEVEL: str = "WARNING"
-    LOG_DIR: Path = Path(TEMP_DIR) / "logs"
-    LOG_FILENAME: str = f"matrx_app_{APP_NAME}.log"
+    LOCAL_LOG_DIRECTORY: Path = Path(TEMP_DIR) / "logs"
+    REMOTE_LOG_DIRECTORY: Path = "var/log"
+    LOG_FILENAME: str = f"matrx_app.log"
     LOG_VCPRINT: bool = True
 
     STATIC_ROOT: Path = Path(BASE_DIR) / "staticfiles"
     PORT: int = 8000
+
+    SAVE_DIRECT_SCHEMA: bool = True
+    LONG_RUNNING_SERVICES: list[str] = ["transcription_service",
+                                        "scrape_service"]
 
     # Migration related settings.
 
@@ -47,5 +53,4 @@ BASE_DIR = settings.BASE_DIR
 TEMP_DIR = settings.TEMP_DIR
 # Ensure directories exist
 os.makedirs(settings.TEMP_DIR, exist_ok=True)
-os.makedirs(settings.LOG_DIR, exist_ok=True)
-
+os.makedirs(settings.LOCAL_LOG_DIRECTORY, exist_ok=True)
