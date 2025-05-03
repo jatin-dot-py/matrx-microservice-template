@@ -3,7 +3,7 @@ import os
 import sys
 import logging.config
 from matrx_utils.conf import settings
-
+from matrx_utils import vcprint
 
 def get_log_directory():
     """Return the appropriate log directory based on environment"""
@@ -93,3 +93,5 @@ try:
 except Exception as e:
     print(f"CRITICAL ERROR: Failed to configure logging: {e}", file=sys.stderr)
 
+
+vcprint("[system_logger.py] Started System Logger")

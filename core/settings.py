@@ -1,5 +1,6 @@
 from pathlib import Path
 import os
+import tempfile
 
 from pydantic_settings import BaseSettings, SettingsConfigDict
 from dotenv import load_dotenv
@@ -21,6 +22,7 @@ class Settings(BaseSettings):
     # Paths
     BASE_DIR: Path = Path(__file__).resolve().parent.parent
     TEMP_DIR: Path = Path(BASE_DIR) / "temp"
+    ADMIN_PYTHON_ROOT_DIR: str = tempfile.mkdtemp()
 
     # Logging
     LOG_LEVEL: str = "WARNING"
@@ -32,9 +34,10 @@ class Settings(BaseSettings):
     STATIC_ROOT: Path = Path(BASE_DIR) / "staticfiles"
     PORT: int = 8000
 
-    SAVE_DIRECT_SCHEMA: bool = True
     LONG_RUNNING_SERVICES: list[str] = ["transcription_service",
                                         "scrape_service"]
+
+
 
     # Migration related settings.
 
