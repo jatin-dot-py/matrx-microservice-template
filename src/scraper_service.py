@@ -241,10 +241,9 @@ class ScrapeService(SocketServiceBase):
 
 
     async def quick_scrape(self):
-        objects =  ScrapeDomainManager().filter()
+        manager = ScrapeDomainManager()
+        objects = await manager.load_items()
         await self.stream_handler.send_data_final([obj.to_dict() for obj in objects])
-
-
 
 
     async def mic_check(self):
