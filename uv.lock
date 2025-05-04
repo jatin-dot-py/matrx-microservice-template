@@ -570,7 +570,7 @@ dependencies = [
 requires-dist = [
     { name = "concurrent-log-handler", specifier = ">=0.9.25" },
     { name = "fastapi", specifier = "==0.115.12" },
-    { name = "matrx-utils", git = "https://github.com/armanisadeghi/matrx-utils?rev=8fe3ecc" },
+    { name = "matrx-utils", git = "https://github.com/armanisadeghi/matrx-utils?rev=8fe3ecc64b9d456070f19c2f769575fea4024f44" },
     { name = "pydantic-settings", specifier = ">=2.9.1" },
     { name = "python-socketio", specifier = "==5.13.0" },
     { name = "supabase", specifier = ">=2.15.0" },
@@ -581,7 +581,7 @@ requires-dist = [
 [[package]]
 name = "matrx-utils"
 version = "0.1.0"
-source = { git = "https://github.com/armanisadeghi/matrx-utils?rev=8fe3ecc#8fe3ecc64b9d456070f19c2f769575fea4024f44" }
+source = { git = "https://github.com/armanisadeghi/matrx-utils?rev=8fe3ecc64b9d456070f19c2f769575fea4024f44#8fe3ecc64b9d456070f19c2f769575fea4024f44" }
 dependencies = [
     { name = "aioboto3" },
     { name = "asyncpg" },
