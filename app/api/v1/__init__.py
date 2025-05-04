@@ -1,3 +1,4 @@
+# app\api\v1\__init__.py
 from fastapi import FastAPI
 from core import settings
 from .endpoints import router

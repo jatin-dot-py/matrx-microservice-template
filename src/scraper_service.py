@@ -1,3 +1,4 @@
+# src\scraper_service.py
 from matrx_utils.socket.core.service_base import SocketServiceBase
 from dataclasses import asdict
 from matrx_utils.database.orm.manager import ScrapeDomainManager
@@ -13,9 +14,9 @@ success_search_sample = {
         {
             "keyword": "giorgia meloni trump",
             "type": "news",
-            "title": "Giorgia Meloni whispers soothing words to Trump on ‘western nationalism’ | The Guardian",
+            "title": "Giorgia Meloni whispers soothing words to Trump on 'western nationalism' | The Guardian",
             "url": "https://www.theguardian.com/us-news/2025/apr/17/giorgia-meloni-trump-meeting",
-            "description": "The president and Italy’s prime minister spoke a common language – but for a discordant moment over Ukraine.",
+            "description": "The president and Italy's prime minister spoke a common language - but for a discordant moment over Ukraine.",
             "source": "The Guardian",
             "age": "3 days ago",
             "thumbnail": "https://i.guim.co.uk/img/media/4fd653093a69d16d4d3e0575979111597f8f2c4c/0_224_4539_2723/master/4539.jpg?width=1200&height=630"
@@ -48,13 +49,13 @@ sample_successful_scrapes = data = {
                 "website": "theguardian.com",
                 "url": "https://www.theguardian.com/us-news/2025/apr/17/giorgia-meloni-trump-meeting",
                 "unique_page_name": "www_theguardian_com_us_news_2025_apr_17_giorgia_meloni_trump_meeting",
-                "page_title": "Giorgia Meloni whispers soothing words to Trump on ‘western nationalism’ | The Guardian",
+                "page_title": "Giorgia Meloni whispers soothing words to Trump on �western nationalism� | The Guardian",
                 "has_structured_content": True,
                 "table_count": 0,
                 "code_block_count": 0,
                 "list_count": 2,
                 "outline": {
-                    "H1: Giorgia Meloni whispers soothing words to Trump on ‘western nationalism’": [],
+                    "H1: Giorgia Meloni whispers soothing words to Trump on �western nationalism�": [],
                     "H2: Diplomatic Highlights": [],
                     "H2: Related Topics": [],
                     "unassociated": []
@@ -65,7 +66,7 @@ sample_successful_scrapes = data = {
                     "json-ld": [],
                     "opengraph": {},
                     "meta_tags": {
-                        "description": "The president and Italy’s prime minister spoke a common language – but for a discordant moment over Ukraine",
+                        "description": "The president and Italy�s prime minister spoke a common language � but for a discordant moment over Ukraine",
                         "viewport": "width=device-width,minimum-scale=1,initial-scale=1",
                         "article:author": "https://www.theguardian.com/profile/roberttait",
                         "article:published_time": "2025-04-17T21:51:15.000Z",
@@ -77,7 +78,7 @@ sample_successful_scrapes = data = {
             },
             "structured_data": {
                 "Ordered Lists": {
-                    "H1: Giorgia Meloni whispers soothing words to Trump on ‘western nationalism’": [
+                    "H1: Giorgia Meloni whispers soothing words to Trump on �western nationalism�": [
                         {
                             "Before": "",
                             "List": [
@@ -92,17 +93,17 @@ sample_successful_scrapes = data = {
                 }
             },
             "organized_data": {
-                "H1: Giorgia Meloni whispers soothing words to Trump on ‘western nationalism’": [
-                    "The president and Italy’s prime minister spoke a common language – but for a discordant moment over Ukraine",
-                    "She had been welcomed to the White House with open arms as few other foreign visitors had been since Donald Trump’s return.",
-                    "Italy’s prime minister, whose Brothers of Italy party has roots in neo-fascism, emphasized shared values."
+                "H1: Giorgia Meloni whispers soothing words to Trump on �western nationalism�": [
+                    "The president and Italy�s prime minister spoke a common language � but for a discordant moment over Ukraine",
+                    "She had been welcomed to the White House with open arms as few other foreign visitors had been since Donald Trump�s return.",
+                    "Italy�s prime minister, whose Brothers of Italy party has roots in neo-fascism, emphasized shared values."
                 ],
                 "H2: Diplomatic Highlights": [
-                    "Meloni introduced the concept of ‘western nationalism’ to bridge transatlantic differences.",
+                    "Meloni introduced the concept of �western nationalism� to bridge transatlantic differences.",
                     "A question about Ukraine revealed tensions, with Trump distancing himself from Zelenskyy."
                 ]
             },
-            "text_data": "Giorgia Meloni whispers soothing words to Trump on ‘western nationalism’\n\nThe president and Italy’s prime minister spoke a common language – but for a discordant moment over Ukraine\n\nShe had been welcomed to the White House with open arms as few other foreign visitors had been since Donald Trump’s return, and Giorgia Meloni wanted to assure her host that – at least when it came to their political worldview – they spoke a common language.\n\nItaly’s prime minister, whose Brothers of Italy party has roots in neo-fascism, was keen to stress shared values...",
+            "text_data": "Giorgia Meloni whispers soothing words to Trump on �western nationalism�\n\nThe president and Italy�s prime minister spoke a common language � but for a discordant moment over Ukraine\n\nShe had been welcomed to the White House with open arms as few other foreign visitors had been since Donald Trump�s return, and Giorgia Meloni wanted to assure her host that � at least when it came to their political worldview � they spoke a common language.\n\nItaly�s prime minister, whose Brothers of Italy party has roots in neo-fascism, was keen to stress shared values...",
             "main_image": "https://i.guim.co.uk/img/media/4fd653093a69d16d4d3e0575979111597f8f2c4c/0_224_4539_2723/master/4539.jpg?width=1200&height=630&quality=85&auto=format&fit=crop",
             "hashes": [
                 "sha256:def456ghi789",

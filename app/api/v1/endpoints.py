@@ -1,4 +1,4 @@
-# File: app/api/v1/endpoints.py
+# app\api\v1\endpoints.py
 import logging
 
 from fastapi import APIRouter

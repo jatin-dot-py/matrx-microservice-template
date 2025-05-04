@@ -1,3 +1,4 @@
+# app\api\__init__.py
 import logging
 import time
 from contextlib import asynccontextmanager
@@ -33,7 +34,7 @@ def create_app() -> FastAPI:
 
         yield
         # --- shutdown block ---
-        logger.info("Shutting down gracefully…")
+        logger.info("Shutting down gracefully...")
         await task_queue.shutdown()
         logger.info("Task Queue Shutdown complete.")
 

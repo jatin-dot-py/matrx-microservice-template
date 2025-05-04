@@ -1,3 +1,4 @@
+# core\scripts\initialize_db_models.py
 from matrx_utils.core.initialize_database import init
 from matrx_utils.conf import settings
 
