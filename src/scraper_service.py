@@ -1,6 +1,5 @@
 # src\scraper_service.py
 from matrx_utils.socket.core.service_base import SocketServiceBase
-from dataclasses import asdict
 from matrx_utils.database.orm.manager import ScrapeDomainManager
 
 verbose = False
@@ -240,12 +239,10 @@ class ScrapeService(SocketServiceBase):
     async def process_task(self, task, task_context=None, process=True):
         return await self.execute_task(task, task_context, process)
 
-
     async def quick_scrape(self):
         manager = ScrapeDomainManager()
         objects = await manager.load_items()
         await self.stream_handler.send_data_final([obj.to_dict() for obj in objects])
-
 
     async def mic_check(self):
         if self.stream_handler:

@@ -16,4 +16,4 @@ dependencies = [
 ]
 
 [tool.uv.sources]
-matrx-utils = { git = "https://github.com/armanisadeghi/matrx-utils", rev = "9937d04063c4b4b2e1b20e4e04efe35b14491edf" }
+matrx-utils = { git = "https://github.com/armanisadeghi/matrx-utils", rev = "e4ff165" }
